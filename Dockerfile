@@ -1,6 +1,6 @@
 FROM python:3.11-slim
 
-# Instala wkhtmltopdf y dependencias del sistema
+# Instala wkhtmltopdf y dependencias necesarias
 RUN apt-get update && apt-get install -y \
     wkhtmltopdf \
     build-essential \
@@ -15,14 +15,14 @@ RUN apt-get update && apt-get install -y \
 # Crea directorio de trabajo
 WORKDIR /app
 
-# Copia archivos
+# Copia todos los archivos del proyecto
 COPY . .
 
 # Instala dependencias Python
 RUN pip install -r requirements.txt
 
-# Expone el puerto
+# Expone el puerto donde corre gunicorn
 EXPOSE 8000
 
-# Comando para iniciar el servidor
+# Comando para ejecutar la app
 CMD ["gunicorn", "--bind", "0.0.0.0:8000", "app:app"]
