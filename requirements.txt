@@ -1,5 +1,4 @@
-pdf-service-nintex/
-├── app.py
-├── plantilla.html
-├── requirements.txt
-├── Dockerfile
+flask
+pdfkit
+jinja2
+gunicorn
