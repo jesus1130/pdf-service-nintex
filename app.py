@@ -3,7 +3,7 @@ import pdfkit
 import tempfile
 
 # Ruta local de wkhtmltopdf en Windows (ajusta si es necesario)
-config = pdfkit.configuration(wkhtmltopdf='C:/Program Files/wkhtmltopdf/bin/wkhtmltopdf.exe')
+config = pdfkit.configuration(wkhtmltopdf='/usr/bin/wkhtmltopdf')
 
 app = Flask(__name__)
 
